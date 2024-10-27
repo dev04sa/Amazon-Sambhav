@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import Checkout from "./components/Checkout";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -11,17 +11,10 @@ function App() {
       <div className="App">
         <Header />
 
-        <Switch>
-
-          <Route path="/checkout">
-            <Checkout />
-          </Route>
-
-          <Route path="/">
-            <Home />
-          </Route>
-
-        </Switch>
+        <Routes>
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
 
         <Footer />
       </div>
